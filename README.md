@@ -1,3 +1,15 @@
+# DWNLD Apache Spark fork
+
+This was forked by DWNLD in order to build and publish artifacts for our spark,
+scala, and hadoop version tripplet. Currently, that tripplet is (1.6.2, 2.11, 2.6.0)
+
+## Publishing
+
+The dwnld build is published using sbt:
+
+	./build/sbt -Pyarn -Phadoop-2.6 -Pscala-2.11
+	> publish
+
 # Apache Spark
 
 Spark is a fast and general cluster computing system for Big Data. It provides

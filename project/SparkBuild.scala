@@ -211,7 +211,7 @@ object SparkBuild extends PomBuild {
       }
       analysis
     }
-  )
+  ) ++ DwnldSettings.settings
 
   def enable(settings: Seq[Setting[_]])(projectRef: ProjectRef) = {
     val existingSettings = projectsMap.getOrElse(projectRef.project, Seq[Setting[_]]())
