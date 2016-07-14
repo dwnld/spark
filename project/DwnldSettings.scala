@@ -12,7 +12,8 @@ object DwnldSettings {
     publishTo := {
       val prefix = if (isSnapshot.value) "snapshots" else "releases"
       Some(s3resolver.value(s"$prefix s3 bucket", s3(prefix+".mvn-repo.dwnld.me")) withIvyPatterns)
-    }
+    },
+    ivyConfigurations += Configuration("default", "Default", true, List(Configurations.Runtime), true)
   )
 
   lazy val settings = noDoc ++ S3Resolver.defaults ++ publishSettings
